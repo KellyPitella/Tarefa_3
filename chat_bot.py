@@ -63,7 +63,7 @@ def obter_resposta(texto: str) -> str:
 
 
 def chat() -> None:
-    print('Bem-vindo ao ChatBot!')
+    print('Bem-vindo ao ChatBot! \n Vamos nos conhecer melhor!')
     print('Escreva "bye" para sair do chat')
     name: str = input('Bot: Como te chamas? ')
     
@@ -71,10 +71,12 @@ def chat() -> None:
     
     hobby = input('Bot: Quais são seus hobbies? ')
     user_info['hobby'] = hobby
-    
     print(f'Bot: É um hobby muito interessante, {name}! Gostaria de tentar um dia!')
 
-    print(f'Como te posso ajudar hoje {name} ?')
+    idade = input('Bot: Quantos anos você tem? ')
+    user_info['idade'] = idade
+    
+    print(f'Obrigado por compartilhar um pouco sobre você comigo =) \nComo te posso te ajudar hoje {name} ?')
     while True:
         user_input: str = input('Tu: ')
         resposta: str = obter_resposta(user_input, user_info)
