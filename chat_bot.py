@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+import random 
 
 def obter_resposta(texto: str) -> str:
     comando: str = texto.lower()
@@ -29,6 +30,21 @@ def obter_resposta(texto: str) -> str:
         ('data' , 'dia'): f'Hoje é dia: {datetime.now():%d-%m-%Y}',
         ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...'
     }
+    
+    fatos_curiosos = [
+        
+        'Sabia que as abelhas podem reconhecer rostos humanos?',
+        'Os golfinhos têm nomes uns para os outros!',
+        'Você sabia que os polvos têm três corações?',
+        'O coração de um camarão está na cabeça!',
+        'O maior animal do mundo é a baleia azul, que pode medir até 30 metros!',
+        'Você sabia que os flamingos nascem brancos e ficam cor-de-rosa devido à sua alimentação?',
+        'O mel nunca estraga! Encontraram mel em tumbas egípcias com mais de 3000 anos e ele ainda estava comestível!',
+    ]
+    
+    if comando == 'fato curioso':
+        return random.choice(fatos_curiosos)
+    
 
     for chave, resposta in respostas.items():
         if isinstance(chave, tuple):
