@@ -49,6 +49,15 @@ def obter_resposta(texto: str,user_info: dict ) -> str:
         'O mel nunca estraga! Encontraram mel em tumbas egípcias com mais de 3000 anos e ele ainda estava comestível!',
     ]
     
+    piadas = [
+    'Por que o computador foi ao médico? Porque ele estava com um vírus!',
+    'O que o pato disse para a pata? Vem Quá!',
+    'Por que o tomate foi ao tribunal? Porque ele quis apelar!',
+    'Por que o estudante levou uma escada para a escola? Porque ele queria chegar ao ensino superior!',
+    'Qual é o café mais perigoso do mundo? O ex-presso!',
+    'Por que a matemática é péssima em festas? Porque ela sempre fica procurando por uma solução!',
+    ]
+    
     if comando == 'pergunta engraçada':
         pergunta = random.choice(list(perguntas_engracadas.keys()))
         user_info['ultima_pergunta'] = pergunta
@@ -56,6 +65,9 @@ def obter_resposta(texto: str,user_info: dict ) -> str:
 
     elif comando == 'fato curioso':
         return random.choice(fatos_curiosos)
+    
+    elif comando == 'conte-me uma piada':
+        return random.choice(piadas)
 
 
     if 'ultima_pergunta' in user_info and user_info['ultima_pergunta'] in perguntas_engracadas:
