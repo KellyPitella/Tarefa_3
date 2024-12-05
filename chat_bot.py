@@ -25,6 +25,8 @@ def obter_resposta(texto: str) -> str:
         'como estás': 'Estou bem, obrigado!',
         'como te chamas': 'O meu nome é: Bot :)',
         'tempo': 'Está um dia de sol!',
+        ('que horas são', 'horas'): f'São: {datetime.now():%H:%M} horas',
+        ('data' , 'dia'): f'Hoje é dia: {datetime.now():%d-%m-%Y}',
         ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...'
     }
 
@@ -35,11 +37,11 @@ def obter_resposta(texto: str) -> str:
         elif chave in comando:
             return resposta
 
-    if 'horas' in comando:
-        return f'São: {datetime.now():%H:%M} horas'
+    #if 'horas' in comando:
+        #return f'São: {datetime.now():%H:%M} horas'
 
-    if 'data' in comando:
-        return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
+    #if 'data' in comando:
+        #return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
 
     return f'Desculpa, não entendi a questão! {texto}'
 
